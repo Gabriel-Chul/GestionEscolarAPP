@@ -126,7 +126,7 @@ namespace GestionEscolarAPP.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error al validar las credenciales del usuario.");
+                _logger.LogError(ex, "Error al validar las credenciales del usuario LSDBNDHGEWUG.");
                 return null;
             }
         }

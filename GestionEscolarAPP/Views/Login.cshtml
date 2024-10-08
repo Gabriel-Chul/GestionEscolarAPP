@@ -1,0 +1,20 @@
+﻿@model GestionEscolarAPP.Models.LoginModel
+
+<h2>Iniciar Sesión</h2>
+<form asp-action="Login" method="post">
+    <div>
+        <label>Usuario:</label>
+        <input asp-for="Usuario" />
+        <span asp-validation-for="Usuario" style="color:red"></span>
+    </div>
+    <div>
+        <label>Contraseña:</label>
+        <input asp-for="Clave" type="password" />
+        <span asp-validation-for="Clave" style="color:red"></span>
+    </div>
+    <button type="submit">Iniciar Sesión</button>
+    <div>
+        <a asp-action="Login">¿Olvidaste tu contraseña?</a>
+        <a asp-action="Login">Login para Docentes</a>
+    </div>
+</form>

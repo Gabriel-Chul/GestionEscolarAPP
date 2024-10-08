@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Página Principal del Docente";
+}
+
+<h2>@ViewData["Title"]</h2>
+<nav>
+    <a href="@Url.Action("VerNotas", "Docente")">Ver Notas</a>
+    <a href="@Url.Action("Materias", "Docente")">Materias</a>
+    <a href="@Url.Action("Tareas", "Docente")">Tareas</a>
+    <a href="@Url.Action("Estadisticas", "Docente")">Estadísticas</a>
+    <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Cerrar Sesión</a>
+</nav>

@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12 text-center">
+            <h2 class="bg-secondary text-white p-3">Estadísticas del Estudiante</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <h3 class="text-center">Registrar Datos Estadísticos</h3>
+            <form asp-action="GuardarEstadisticas" method="post">
+                <div class="form-group mt-3">
+                    <label for="NombreEstudiante">Nombre del Estudiante:</label>
+                    <input type="text" class="form-control" id="NombreEstudiante" name="NombreEstudiante" placeholder="Ingrese el nombre del estudiante">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="DiasAsistidos">Días Asistidos:</label>
+                    <input type="number" class="form-control" id="DiasAsistidos" name="DiasAsistidos" placeholder="Ingrese los días asistidos">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="TareasCumplidas">Tareas Cumplidas:</label>
+                    <input type="number" class="form-control" id="TareasCumplidas" name="TareasCumplidas" placeholder="Ingrese el número de tareas cumplidas">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="TareasNoCumplidas">Tareas No Cumplidas:</label>
+                    <input type="number" class="form-control" id="TareasNoCumplidas" name="TareasNoCumplidas" placeholder="Ingrese el número de tareas no cumplidas">
+                </div>
+                <div class="form-group mt-4 text-center">
+                    <button type="submit" class="btn btn-dark w-100">Guardar Estadísticas</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

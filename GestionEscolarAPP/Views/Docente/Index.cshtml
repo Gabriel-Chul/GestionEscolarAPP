@@ -1,12 +1,40 @@
 ﻿@{
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
     ViewData["Title"] = "Página Principal del Docente";
 }
 
 <h2>@ViewData["Title"]</h2>
-<nav>
-    <a href="@Url.Action("VerNotas", "Docente")">Ver Notas</a>
-    <a href="@Url.Action("Materias", "Docente")">Materias</a>
-    <a href="@Url.Action("Tareas", "Docente")">Tareas</a>
-    <a href="@Url.Action("Estadisticas", "Docente")">Estadísticas</a>
-    <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Cerrar Sesión</a>
-</nav>
+<div class="row text-center mt-5">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="~/images/notas-icon.png" class="card-img-top" alt="Ver Notas">
+            <div class="card-body">
+                <a href="@Url.Action("VerNotas", "Estudiante")" class="btn btn-primary">Ver Notas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="~/images/materias-icon.png" class="card-img-top" alt="Materias">
+            <div class="card-body">
+                <a href="@Url.Action("Materias", "Estudiante")" class="btn btn-primary">Materias</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="~/images/tareas-icon.png" class="card-img-top" alt="Tareas">
+            <div class="card-body">
+                <a href="@Url.Action("Tareas", "Estudiante")" class="btn btn-primary">Tareas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="~/images/estadisticas-icon.png" class="card-img-top" alt="Estadísticas">
+            <div class="card-body">
+                <a href="@Url.Action("Estadisticas", "Estudiante")" class="btn btn-primary">Estadísticas</a>
+            </div>
+        </div>
+    </div>
+</div>

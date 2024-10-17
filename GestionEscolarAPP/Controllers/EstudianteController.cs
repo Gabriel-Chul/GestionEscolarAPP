@@ -10,5 +10,12 @@ namespace GestionEscolarAPP.Controllers
         {
             return View();
         }
+
+        // GET: Estudiante/Calificaciones
+        public IActionResult Calificaciones()
+        {
+            // Aquí deberías obtener las calificaciones del estudiante desde la base de datos
+            return View(); // Asegúrate de que la vista 'Calificaciones.cshtml' existe
+        }
     }
 }

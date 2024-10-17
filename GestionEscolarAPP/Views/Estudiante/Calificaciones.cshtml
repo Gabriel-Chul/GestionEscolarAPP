@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GestionEscolarAPP.Models.Estudiante.CalificacionModel>
+
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewData["Title"] = "Notas de Estudiantes";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Notas de Estudiantes</h2>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Materia</th>
+                    <th>Periodo 1</th>
+                    <th>Periodo 2</th>
+                    <th>Periodo 3</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any()) // Verificar si el modelo no es null y tiene elementos
+                {
+                    foreach (var calificacion in Model) // Iterar sobre el modelo
+                    {
+                        <tr>
+                            <td>@calificacion.Materia</td>
+                            <td>@calificacion.Evaluacion1</td>
+                            <td>@calificacion.Evaluacion2</td>
+                            <td>@calificacion.Evaluacion3</td>
+                            <td>@calificacion.NotaFinal</td> <!-- Usar NotaFinal directamente -->
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">No hay calificaciones disponibles.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="mt-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-3">
+            <p><strong>Síguenos</strong></p>
+            <a href="#"><i class="bi bi-x fs-4"></i></a>
+            <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#"><i class="bi bi-youtube fs-4"></i></a>
+            <a href="#"><i class="bi bi-linkedin fs-4"></i></a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <p><strong>Contacto</strong></p>
+            <p><i class="bi bi-telephone-fill"></i> +503 23839198</p>
+            <p><i class="bi bi-envelope-fill"></i> correoinstitucional@gmail.com</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <p><strong>Dirección</strong></p>
+            <p>Calle Ficticia 123, Colonia Imaginaria, Ciudad Inexistente, #23</p>
+        </div>
+    </div>
+</footer>

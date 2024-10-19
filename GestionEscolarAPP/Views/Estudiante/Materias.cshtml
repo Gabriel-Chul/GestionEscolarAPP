@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GestionEscolarAPP.Models.Estudiante.MateriasModel>
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewData["Title"] = "Materias de Estudiantes";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materias Inscritas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Materias Inscritas</h2>
+        <table class="table table-bordered table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th>Día</th>
+                    <th>Hora</th>
+                    <th>Aula</th>
+                    <th>Maestro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var materia in Model)
+                {
+                    <tr>
+                        <td>@materia.Materia</td>
+                        <td>@materia.Dia</td>
+                        <td>@materia.Hora</td>
+                        <td>@materia.Aula</td>
+                        <td>@materia.Maestro</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="border-top footer text-muted mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Síguenos en redes sociales:
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="col">
+                    Contacto: +503 23839198
+                    <br>Email: corroinstitucional@gmail.com
+                </div>
+                <div class="col">
+                    Dirección: Calle Ficticia 123, Colonia Imaginaria, Ciudad Inexistente
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

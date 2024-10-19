@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="container">
+    <h1 class="display-4 text-center">Contacto</h1>
+    <p class="mt-4">Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nosotros. Aquí tienes nuestras vías de comunicación:</p>
+
+    <ul class="list-group">
+        <li class="list-group-item">Teléfono: +123 456 7890</li>
+        <li class="list-group-item">Email: info@universidad.edu</li>
+        <li class="list-group-item">Dirección: Calle Ficticia 123, Ciudad, País</li>
+    </ul>
+
+    <p class="mt-4">También puedes rellenar el siguiente formulario para enviarnos un mensaje:</p>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Tu email">
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Tu mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

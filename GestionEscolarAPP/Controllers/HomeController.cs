@@ -20,6 +20,30 @@ namespace GestionEscolarAPP.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            _logger.LogInformation("Accediendo a la página 'Acerca de Nosotros'.");
+            return View("About");
+        }
+
+        public IActionResult Courses()
+        {
+            _logger.LogInformation("Accediendo a la página de cursos.");
+            return View("Courses");
+        }
+
+        public IActionResult Admissions()
+        {
+            _logger.LogInformation("Accediendo a la página de admisiones.");
+            return View("Admissions");
+        }
+
+        public IActionResult Contact()
+        {
+            _logger.LogInformation("Accediendo a la página de contacto.");
+            return View("Contact");
+        }
+
         public IActionResult Privacy()
         {
             _logger.LogInformation("Accediendo a la página de privacidad.");

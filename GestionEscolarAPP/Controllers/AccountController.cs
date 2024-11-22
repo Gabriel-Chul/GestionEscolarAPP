@@ -70,9 +70,15 @@ namespace GestionEscolarAPP.Controllers
                         HttpContext.Session.SetString("Usuario", nombreUsuario);
                         HttpContext.Session.SetString("Rol", rol);
 
+                        // Guardar el EstudianteID en la sesión
+                        if (rol == "Estudiante")
+                        {
+                            HttpContext.Session.SetInt32("EstudianteID", usuario.Id); // Suponiendo que el ID del estudiante es usuario.Id
+                        }
+
                         return rol switch
                         {
-                            "Estudiante" => RedirectToAction("Index", "Estudiante"),
+                            "Estudiante" => RedirectToAction("Index", "Estudiante"), 
                             "Docente" => RedirectToAction("Index", "Docente"),
                             _ => RedirectToAction("Login")
                         };

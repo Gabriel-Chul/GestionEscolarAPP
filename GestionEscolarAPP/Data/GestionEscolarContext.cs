@@ -32,8 +32,7 @@ namespace GestionEscolarAPP.Data
             {
                 entity.ToTable("Calificaciones");  // Mapear a la tabla Calificaciones
                 entity.HasKey(e => e.CalificacioID);  // Nombre correcto de la columna
-                entity.Property(e => e.Nota)
-                    .HasColumnType("DECIMAL(5,2)");  // Configura el tipo de datos para Nota
+     
                 entity.Property(e => e.TotalNota)
                     .HasColumnType("DECIMAL(3,1)");  // Configura el tipo de datos para TotalNota
                 entity.Property(e => e.EstudianteNombre)

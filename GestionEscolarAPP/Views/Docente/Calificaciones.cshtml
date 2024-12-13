@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GestionEscolarAPP.Models.Docente.CalificacionDocenteModel>
+
+@{
+    ViewData["Title"] = "Calificaciones";
+}
+
+<h1>Calificaciones</h1>
+
+<p>
+    <a asp-action="Crear">Añadir Nueva Calificación</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Estudiante</th>
+            <th>Sección</th>
+            <th>Materia</th>
+            <th>Periodo</th>
+            <th>Nota</th>
+            <th>Fecha</th>
+            <th>Total Nota</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EstudianteNombre</td>
+                    <td>@item.SeccionNombre</td>
+                    <td>@item.MateriaNombre</td>
+                    <td>@item.PeriodoID</td>
+                    <td>@item.Nota</td>
+                    <td>@item.FechaCalificacion</td>
+                    <td>@item.TotalNota</td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@item.CalificacioID">Editar</a> |
+                        <a asp-action="Eliminar" asp-route-id="@item.CalificacioID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">No hay calificaciones disponibles.</td>
+            </tr>
+        }
+    </tbody>
+</table>

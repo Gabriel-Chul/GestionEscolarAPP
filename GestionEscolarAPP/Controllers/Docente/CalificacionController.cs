@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using GestionEscolarAPP.Controllers.Filters;
 using Microsoft.Data.SqlClient; // Importar para el uso de SqlParameter
-using Microsoft.AspNetCore.Http; // Importar para el uso de HttpContext.Session
+using Microsoft.AspNetCore.Http;
 
-namespace GestionEscolarAPP.Controllers
+namespace GestionEscolarAPP.Controllers.Docente
 {
     [ServiceFilter(typeof(AutenticacionFilter))] // Aplica el filtro de autenticación
     public class CalificacionController : Controller

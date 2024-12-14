@@ -56,7 +56,7 @@ namespace GestionEscolarAPP.Controllers
             // Puedes necesitar obtener una tarea existente de alguna manera si tienes lógica de negocio para eso.
             // Por ejemplo:
             // var tareaId = // lógica para determinar la tarea que se está enviando
-             await _context.EnviarTareaAsync(Id, comentario, enlace);
+             _context.EnviarTareaAsync(Id, comentario, enlace);
 
             // Si no se utiliza tareaId, puedes comentar la línea anterior y manejarlo de acuerdo a tus requisitos.
 

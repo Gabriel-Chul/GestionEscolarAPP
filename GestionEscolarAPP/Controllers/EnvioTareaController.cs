@@ -46,5 +46,10 @@ namespace GestionEscolarAPP.Controllers
 
             return RedirectToAction("Vista1"); // Redirigir a Vista1 o a donde sea apropiado
         }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,44 @@
+﻿@model GestionEscolarAPP.Models.Tarea
+
+@{
+    ViewData["Title"] = "Registrar Nueva Tarea";
+}
+
+<h1>REGISTRAR NUEVA TAREA</h1>
+<h5>Los campos con el asterisco (*) son obligatorios</h5>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Titulo">Título de la Tarea <span class="text-danger">*</span></label>
+        <input asp-for="Titulo" class="form-control" required />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Descripcion">Descripción de la Tarea <span class="text-danger">*</span></label>
+        <textarea asp-for="Descripcion" class="form-control" required></textarea>
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Materia">Materia <span class="text-danger">*</span></label>
+        <input asp-for="Materia" class="form-control" required />
+        <span asp-validation-for="Materia" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaEntrega">Fecha de Entrega <span class="text-danger">*</span></label>
+        <input asp-for="FechaEntrega" class="form-control" type="date" required />
+        <span asp-validation-for="FechaEntrega" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Documento">Adjuntar Enlace <span class="text-danger">*</span></label>
+        <input asp-for="Documento" class="form-control" required />
+        <span asp-validation-for="Documento" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Guardar tarea</button>
+    <br /><br />
+    <a asp-action="ViewVista" class="btn btn-secondary">Volver a la lista de tareas </a>
+</form>

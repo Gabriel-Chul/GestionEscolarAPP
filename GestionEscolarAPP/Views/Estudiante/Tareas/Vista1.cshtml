@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GestionEscolarAPP.Models.TareaEstudiante>
+
+@{
+    ViewData["Title"] = "Lista de Tareas";
+}
+
+<h1>Lista de Tareas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Materia</th>
+            <th>Fecha de Entrega</th>
+            <th>Documento</th>
+            <th>Acciones</th> <!-- Nueva columna para las acciones -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model)
+        {
+            <tr>
+                <td>@tarea.Titulo</td>
+                <td>@tarea.Descripcion</td>
+                <td>@tarea.Materia</td>
+                <td>@tarea.FechaEntrega.ToShortDateString()</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(tarea.Documento))
+                    {
+                        <a href="@tarea.Documento" target="_blank">Visualizar documento</a>
+                    }
+                    else
+                    {
+                        <span>No adjunto</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Enviar" asp-route-tareaId="@tarea.Id" class="btn btn-primary">Entregar Tarea</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

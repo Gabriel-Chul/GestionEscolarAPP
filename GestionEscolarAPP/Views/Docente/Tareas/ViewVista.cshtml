@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GestionEscolarAPP.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Lista de Tareas";
+}
+
+<h1>Lista de Tareas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Materia</th>
+            <th>Fecha de Entrega</th>
+            <th>Documento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model)
+        {
+            <tr>
+                <td>@tarea.Titulo</td>
+                <td>@tarea.Descripcion</td>
+                <td>@tarea.Materia</td>
+                <td>@tarea.FechaEntrega.ToShortDateString()</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(tarea.Documento))
+                    {
+                        <a href="@tarea.Documento" target="_blank">Visualizar documento</a>
+                    }
+                    else
+                    {
+                        <span>No adjunto</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Create" class="btn btn-primary">Registrar Nueva Tarea</a>
+</div>
